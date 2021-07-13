@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/review.png') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1 style="width: 751px;">Company Reviews</h1>
+              <span class="subheading"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <link rel="stylesheet" href="/static/css/circle.css">
+      <style>
+          .main{
+            width: 500px ; height: 450px;
+            
+          }
+          .card{
+            width: 350px ; height: 400px;
+            box-shadow: 7px 7px 7px 7px #1f1e1e;
+            border-radius: 2%;
+            align-items: center;
+            
+              
+          }
+          .card-img-top{
+            width : 280px;
+            height: 200px;
+          }
+          .card-body{
+            margin-left: -5rem;
+          }
+           #mauto {
+            margin-left: 0px !important;
+          }
+          .card {
+            
+            transform-origin:center;
+            transform:perspective(800px) rotateY(15deg);
+            transition:0.2s;
+          }
+          .main {
+            padding: 1.5rem;
+            
+          }
+          .main:hover .card {
+            opacity:0.3;
+          }
+          .main .card:hover {
+            transform:perspective(800px) rotateY(0deg);
+            opacity:1;
+          }
+      </style>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" id="mauto">
+          <p style="text-align: right;"><b>Welcome to the company reviews section!</b></p>
+          <br>
+            <div class="row row-cols-1 row-cols-md-3 g-4" style="width: 1200px;">
+                <div class="col main">
+                  <div class="card"  >
+                    <img src="https://cdn.freebiesupply.com/images/large/2x/amazon-logo-transparent.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Amazon Reviews!
+                        <br>
+                        <br>
+                        <div class="c100 p{{your_list[0]}} small green" >
+                          <span><b>{{your_list[0]}}%</b></span>
+                          <div class="slice">
+                              <div class="bar"></div>
+                              <div class="fill"></div>
+                          </div>
+                        </div><br>Positive Reviews
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col main">
+                  <div class="card">
+                    <img src="http://s3.amazonaws.com/jtg-marcomm/wp-content/uploads/2019/08/09103837/jtg-logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">JTG Reviews!
+                        <br>
+                        <br>
+                        <div class="c100 p{{your_list[1]}} small green">
+                          <span><b>{{your_list[1]}}%</b></span>
+                          <div class="slice">
+                              <div class="bar"></div>
+                              <div class="fill"></div>
+                          </div>
+                      </div><br>Positive Reviews
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col main">
+                  <div class="card">
+                    <img src="https://www.zs.com/content/dam/images/logos/ZS_Logo_RGB@4x.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">ZS Reviews!
+                        <br>
+                        <br>
+                        <div class="c100 p{{your_list[2]}} small green">
+                          <span><b>{{your_list[2]}}%</b></span>
+                          <div class="slice">
+                              <div class="bar"></div>
+                              <div class="fill"></div>
+                          </div>
+                      </div><br>Positive Reviews
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col main">
+                  <div class="card">
+                    <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">To The New Reviews!
+                        <br>
+                        <br>
+                        <div class="c100 p{{your_list[3]}} small green">
+                          <span><b>{{your_list[3]}}%</b></span>
+                          <div class="slice">
+                              <div class="bar"></div>
+                              <div class="fill"></div>
+                          </div>
+                      </div><br>Positive Reviews
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col main">
+                    <div class="card">
+                      <img src="https://aniportalimages.s3.amazonaws.com/media/details/HashedIn_july9_8rXc7Gs.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">HashedIn Reviews!
+                          <br>
+                          <br>
+                          <div class="c100 p{{your_list[4]}} small green">
+                            <span><b>{{your_list[4]}}%</b></span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div><br>Positive Reviews
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col main">
+                    <div class="card">
+                      <img src="https://ik.imagekit.io/tvlk/blog/2020/01/Traveloka_Primary_Logo.png?tr=dpr-1,w-675" class="card-img-top" alt="..." >
+                      <div class="card-body">
+                        <h5 class="card-title">Traveloka Reviews!
+                          <br>
+                          <br>
+                          <div class="c100 p{{your_list[5]}} small green">
+                            <span><b>{{your_list[5]}}%</b></span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div><br>Positive Reviews
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col main">
+                    <div class="card" >
+                      <img src="https://voicefoundry.com/wp-content/uploads/2018/09/feature-aws.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">AWS Reviews!
+                          <br>
+                          <br>
+                          <div class="c100 p{{your_list[6]}} small green">
+                            <span><b>{{your_list[6]}}%</b></span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div><br>Positive Reviews
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col main">
+                    <div class="card">
+                      <img src="/static/img/newgenlogo1.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">NewGen Reviews!
+                          <br>
+                          <br>
+                          <div class="c100 p{{your_list[7]}} small green">
+                            <span><b>{{your_list[7]}}%</b></span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div><br>Positive Reviews
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col main">
+                    <div class="card">
+                      <img src="/static/img/comprologo.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">HashedIn Reviews!
+                          <br>
+                          <br>
+                          <div class="c100 p{{your_list[8]}} small green">
+                            <span><b>{{your_list[8]}}%</b></span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div><br>Positive Reviews
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group" style="margin-left: 30rem; margin-top: 4rem;">
+               <a href="/writereview"><button type="submit" class="btn btn-primary" id="sendMessageButton">Write a review</button></a> 
+              </div>
+
+         
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}
+

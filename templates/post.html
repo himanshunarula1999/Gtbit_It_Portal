@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>{{post.title}}</h1>
+              <h2 class="subheading">{{post.tagline}}</h2>
+              <span class="meta">Posted by
+                <a href="#">Admin</a>
+                on {{post.date}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="has-luminous-vivid-blue-color has-text-color">Description:</h2>
+            <p>{{post.description}}</p>
+            <hr>
+            <h2 class="has-luminous-vivid-blue-color has-text-color">About:</h2>
+            <p>{{post.content}}</p>
+            <hr>
+            <table class="table table-striped">
+              <tbody>
+                <tr>
+                
+                  <td>Location</td>
+                  <td>{{post.location}}</td>
+                 
+                </tr>
+                <tr>
+                  
+                  <td>Profile</td>
+                  <td>{{post.profile}}</td>
+                  
+                </tr>
+                <tr>
+                  
+                  <td>Salary(Estimated)</td>
+                  <td>{{post.salary}}</td>
+                
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+             
+            <h2 class="has-luminous-vivid-blue-color has-text-color" >Roles/Responsibilites:</h2>
+       
+            <p>
+
+             {{post.roles}}
+            
+            </p>
+        
+            <hr>
+            <h2 class="has-luminous-vivid-blue-color has-text-color" >Skills Required:</h2>
+            <p>
+              {{post.skills}}
+            </p>
+            <a href={{post.button}} target="_blank">  <button class="btn btn-primary"> Apply Now</button></a>
+            <a href={{post.referral}} target="_blank">  <button class="btn btn-primary float-right"> Ask for referral</button></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+   {% endblock %}

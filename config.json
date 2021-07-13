@@ -1,0 +1,20 @@
+{
+
+    "params":
+    {
+        "local_uri": "mysql://root:@localhost/gtbit",
+        "prod_uri": "mysql://root:@localhost/gtbit",
+        "blog_name":"GTBIT IT PORTAL",
+        "gmail-user": "mgmanthan26@gmail.com",
+        "gmail-password":"iamthebestandrock",
+        "no_of_posts": 3,
+        "login_image":"login.svg",
+        "admin_user":"manthan",
+        "admin_password":"manthan",
+        "upload_location":"C:\\Users\\LENOVO\\Documents\\GTBIT"
+        
+    }
+
+
+
+}

@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% block body %}
+<header class="masthead" style="background-image: url('static/img/jobs3.jpeg')">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="file.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{params['blog_name']}}</h1>
+            <span class="subheading">GET PLACED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+          .zoom {
+    transition: transform .2s;
+    /* margin: 0 auto; */
+  }
+
+  .zoom:hover {
+    opacity: 0.8;
+    transform: scale(1.1); 
+  }
+
+
+     .gallery-cell.is-selected {
+   transition: transform .1s;
+   position: absolute;
+   z-index: 5;
+   
+   /* margin: 0 auto; */
+  }
+  
+  .gallery-cell.is-selected:hover {
+    /* border: 2px solid red; */
+    /* border-radius: 50%; */
+    transform: scale(1.1); 
+    
+ }
+ .flickity-viewport{
+   height: 420px !important;
+   width: 70rem !important;
+ }
+ /* .flickity-slider{
+   width : 120% !important;
+ } */
+
+ .main{
+  position: relative;
+    background: #fff;
+ }
+ .main-raised{
+  margin: -100px 30px 0;
+    border-radius: 6px 6px 0 0;
+    /* -webkit-box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%); */
+    box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+ }
+ 
+ 
+     </style>
+  </header>
+<div class="main main-raised" style="display: block;">
+    <div class="overlay" style="padding-left: 18%; padding-top: 3%;">
+      <div class="container">
+        <div class="row">
+          <div>
+            <div>
+              <h1 class="col-lg-20 col-md-20 mx-auto" style="padding-left:18% ;">
+                Let's Break the Hierarchy
+              </h1>
+              <br>
+              <dl class="dl-horizontal" style="color:gray;";>
+                <dt style="text-align: center;">In our country of 1.3 billion+ population, we have millions of students fighting to get into top</dt>
+                <dt style="text-align: center;">colleges each year. But the fact that total strength of those colleges can accommodate only 1%</dt>
+                <dt style="text-align: center;">of students trying to get into them presents a very grave scenario, where 99% of students are</dt>
+                <dt style="text-align: center;">classified as failures each year. Let's break this chain.</dt>
+              </dl>
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+<br>
+<h1 style="text-align:center;">Star Performers</h1>
+<br>
+  <div>
+    <!-- Flickity HTML init -->
+   <div class="size" style="padding-left: 18rem; padding-right: 18rem">
+     <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }' style="height: 430px;">
+
+       <div class="gallery-cell" style="margin-top: 35px;" >
+         <img id="photo" style="border-radius: 5%;" src="https://media-exp3.licdn.com/dms/image/C4E22AQFeUXNVy53uCg/feedshare-shrink_1280/0/1623584793506?e=1626912000&v=beta&t=YxaFdbkVJRNMNOv95VEWSnzvjqC0jegozc7dzYTzD0g" alt="Trulli" width="450" height="350" />
+       </div>
+
+       <div class="gallery-cell" style="margin-top: 35px;">
+         <img id="photo" style="border-radius: 5%;" src="https://media-exp3.licdn.com/dms/image/C4E22AQFYwjtgccUH9A/feedshare-shrink_800/0/1624021306968?e=1626912000&v=beta&t=u0vGWYm-dNATk657ppBvyBsEamTjZECgNuAyNYD0rpc" alt="Trulli" width="450" height="350" />
+       </div>
+ 
+       <div class="gallery-cell" style="margin-top: 35px;">
+         <img id="photo" style="border-radius: 5%;" src="https://media-exp3.licdn.com/dms/image/C4E22AQH4qS3Rf1CUCA/feedshare-shrink_800/0/1617367840630?e=1626912000&v=beta&t=UMuTYtFzgCiZdqj0M0-dSwOzZflEddKb4fC_0r8lswc" alt="Trulli" width="450" height="350" />
+       </div>
+ 
+       <div class="gallery-cell" style="margin-top: 35px;">
+         <img id="photo" style="border-radius: 5%;" src="https://media-exp3.licdn.com/dms/image/C4E22AQEDw99Z7eXfbA/feedshare-shrink_800/0/1619871680889?e=1626912000&v=beta&t=mKVGjW6CoKHu7cHwjMq0UHDuqa7Is3rRCPelY3WVCmM" alt="Trulli" width="450" height="350" />
+       </div>
+ 
+       <div class="gallery-cell" style="margin-top: 35px;">
+         <img id="photo" style="border-radius: 5%;" src="https://media-exp3.licdn.com/dms/image/C4E22AQGLFpLAwzJNNg/feedshare-shrink_800/0/1618057134079?e=1626912000&v=beta&t=rXWM0uuGHrbVhCpq153l7Awpew1fId019U2FbUw-oqI" alt="Trulli" width="450" height="350" />
+       </div>
+     </div>
+   </div>
+ </div>
+  <br>
+  <br>     
+  <br>
+  <div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+      <a href="/insights">
+        <div class="fas fa-graduation-cap zoom" style="font-size:4rem;width:100%;text-align:center;"></div>
+        <h4 style="text-align: center;padding-top: 1rem;">Insights</h4>
+      </a>  
+    </div>
+    <div class="col align-self-center">
+      <a href="/fresher">
+      <div class="fas fa-briefcase zoom" style="font-size:4rem;width:100%;text-align:center;"></div>
+      <h4 style="text-align: center; padding-top: 1rem;">Jobs</h4>
+    </a>
+     </div>
+      
+    <div class="col align-self-end">
+      <a href="/contact">
+        <div class ="fas fa-code zoom" style="font-size:4rem;width:100%;text-align:center;"></div>
+        <h4 style="text-align: center; padding-top: 1rem;">Contact</h4>
+        </a>
+    </div>
+    <div class="col align-self-end">
+      <a href="/review">
+        <div class ="fas fa-star zoom" style="font-size:4rem;width:100%;text-align:center;"></div>
+        <h4 style="text-align: center; padding-top: 1rem;">Company Reviews</h4>
+        </a>
+    </div>
+  </div>
+  </div> 
+  {% endblock %}
+</div> 
+
+  
+         
+
+
