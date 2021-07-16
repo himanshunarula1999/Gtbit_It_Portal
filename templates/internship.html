@@ -28,27 +28,27 @@
       
           <!-- Main Content -->
           <div class="main main-raised" style="display: block;">
-          <div class="container">
+          <div class="container" style="padding-top: 2rem;">
             <div class="row">
               <div class="col-lg-8 col-md-10 mx-auto">
       
                 <!--TO do using for loop from the database-->
-                {% for post in post %}    
+                {% for internship in internship %}    
                 <div class="post-preview">
-                  <a href="/post/{{post.slug}}">
-                    <h2 class="post-title">{{ post.title }}
+                  <a href="/internship/{{internship.slug}}">
+                    <h2 class="post-title">{{ internship.title }}
       
                     </h2>
                     <h3 class="post-subtitle">
-                      {{post.tagline}}
+                      {{internship.tagline}}
                     </h3>
                   </a>
                   <p class="post-meta">Posted by
                     <a href="#">Admin</a>
-                    on {{post.date}}</p>
+                    on {{internship.date}}</p>
                 </div>
       
-                {{post.content[0:143]}}...
+                {{internship.content[0:143]}}...
                
       
                 {% endfor %}

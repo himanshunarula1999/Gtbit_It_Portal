@@ -55,10 +55,21 @@
             transform:perspective(800px) rotateY(0deg);
             opacity:1;
           }
+          .mainx{
+  position: relative;
+    background: #fff;
+ }
+ .main-raisedx{
+  margin: -100px 30px 0;
+    border-radius: 6px 6px 0 0;
+    /* -webkit-box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%); */
+    box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+ }
       </style>
     </header>
 
     <!-- Main Content -->
+    <div class="mainx main-raisedx" style="display: block;">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto" id="mauto">
@@ -213,7 +224,7 @@
                     <div class="card">
                       <img src="/static/img/comprologo.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title">HashedIn Reviews!
+                        <h5 class="card-title">Compro Reviews!
                           <br>
                           <br>
                           <div class="c100 p{{your_list[8]}} small green">
@@ -238,4 +249,5 @@
     </div>
 
    {% endblock %}
+  </div>
 

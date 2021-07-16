@@ -2,18 +2,18 @@
 {% block body %}
 
     <!-- Page Header -->
-    {% set fname = 'img/' + post.img_file %}
+    {% set fname = 'img/' + internship.img_file %}
     <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1>{{post.title}}</h1>
-              <h2 class="subheading">{{post.tagline}}</h2>
+              <h1>{{internship.title}}</h1>
+              <h2 class="subheading">{{internship.tagline}}</h2>
               <span class="meta">Posted by
                 <a href="#">Admin</a>
-                on {{post.date}}</span>
+                on {{internship.date}}</span>
             </div>
           </div>
         </div>
@@ -39,29 +39,29 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <h2 class="has-luminous-vivid-blue-color has-text-color">Description:</h2>
-            <p>{{post.description}}</p>
+            <p>{{internship.description}}</p>
             <hr>
             <h2 class="has-luminous-vivid-blue-color has-text-color">About:</h2>
-            <p>{{post.content}}</p>
+            <p>{{internship.content}}</p>
             <hr>
             <table class="table table-striped">
               <tbody>
                 <tr>
                 
                   <td>Location</td>
-                  <td>{{post.location}}</td>
+                  <td>{{internship.location}}</td>
                  
                 </tr>
                 <tr>
                   
                   <td>Profile</td>
-                  <td>{{post.profile}}</td>
+                  <td>{{internship.profile}}</td>
                   
                 </tr>
                 <tr>
                   
                   <td>Salary(Estimated)</td>
-                  <td>{{post.salary}}</td>
+                  <td>{{internship.salary}}</td>
                 
                 </tr>
               </tbody>
@@ -72,21 +72,21 @@
        
             <p>
 
-             {{post.roles}}
+             {{internship.roles}}
             
             </p>
         
             <hr>
             <h2 class="has-luminous-vivid-blue-color has-text-color" >Skills Required:</h2>
             <p>
-              {{post.skills}}
+              {{internship.skills}}
             </p>
-            <a href={{post.button}} target="_blank">  <button class="btn btn-primary"> Apply Now</button></a>
-            <a href={{post.referral}} target="_blank">  <button class="btn btn-primary float-right"> Ask for referral</button></a>
+            <a href={{internship.button}} target="_blank">  <button class="btn btn-primary"> Apply Now</button></a>
+            <a href={{internship.referral}} target="_blank">  <button class="btn btn-primary float-right"> Ask for referral</button></a>
           </div>
         </div>
       </div>
     </article>
 
    {% endblock %}
-  </div>
+</div>

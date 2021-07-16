@@ -31,6 +31,7 @@ lr = LogisticRegression()
 comparr = ['amazon' , 'josh' , 'zs' , 'new' , 'hashed' , 'traveloka' , 'aws', 'newgen', 'compro'  ]
 # predictions = []
 resarr = []
+pagesarr = []
 
 for i in range(len(comparr)):
     zero = int(0)
@@ -44,13 +45,19 @@ for i in range(len(comparr)):
 
     # from sklearn.metrics import confusion_matrix
     # confusion_matrix(predictions,test_data['Liked']) #Good model
-
+    print(predictions)
     occurences = collections.Counter(predictions)
     zero = occurences[0]
     one = occurences[1]
     sum = one + zero
     res = (one/sum) * 100
     resarr.append(int(res))
+
+    file = test_data=pd.read_csv( comparr[i] + ".csv")
+    pages = file.to_html("trial.html")
+    pagesarr.append(pages)
+    print(pagesarr[i])
+
 
 
 with open('config.json', 'r') as c:
@@ -128,6 +135,23 @@ class Posts(db.Model):
     button = db.Column(db.String(12), nullable=True)
     referral = db.Column(db.String(12), nullable=True)
 
+class Internship(db.Model):
+    sno = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
+    slug = db.Column(db.String(21), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
+    content = db.Column(db.String(120), nullable=False)
+    location = db.Column(db.String(20), nullable=False)
+    profile = db.Column(db.String(50), nullable=False)
+    salary = db.Column(db.String(12), nullable=True)
+    roles = db.Column(db.String(50), nullable=False)
+    skills = db.Column(db.String(50), nullable=False)
+    tagline = db.Column(db.String(120), nullable=False)
+    date = db.Column(db.String(12), nullable=True   )
+    img_file = db.Column(db.String(12), nullable=True)
+    button = db.Column(db.String(12), nullable=True)
+    referral = db.Column(db.String(12), nullable=True)
+
     
 @app.route("/")
 def home():
@@ -145,6 +169,10 @@ def insights():
 @app.route("/review")
 def review():
     return render_template("review.html",your_list = resarr, params=params)
+
+@app.route("/trial")
+def trial():
+    return render_template("trial.html",your_pages = pagesarr, params=params)
 
 @app.route("/writereview", methods = ['GET', 'POST'] )
 def writereview():
@@ -325,28 +353,28 @@ def experience():
 
 @app.route("/internship")
 def internship():
-    post = Posts.query.filter_by().all()
-    last = math.ceil(len(post)/int(params['no_of_posts']))
+    internship = Internship.query.filter_by().all()
+    last = math.ceil(len(internship)/int(params['no_of_posts']))
     #[0: params['no_of_posts']]
     #posts = posts[]
     page = request.args.get('page')
     if(not str(page).isnumeric()):
         page = 1
-    page= int(page)
-    post = post[(page-1)*int(params['no_of_posts']): (page-1)*int(params['no_of_posts'])+ int(params['no_of_posts'])]
+    page = int(page)
+    internship = internship[(page-1)*int(params['no_of_posts']): (page-1)*int(params['no_of_posts'])+ int(params['no_of_posts'])]
     #Pagination Logic
     #First
     if (page==1):
         prev = "#"
-        next = "/fresher?page="+ str(page+1)
+        next = "/internship?page="+ str(page + 1)
     elif(page==last):
-        prev = "/fresher?page=" + str(page - 1)
+        prev = "/internship?page=" + str(page - 1)
         next = "#"
     else:
-        prev = "/fresher?page=" + str(page - 1)
-        next = "/fresher?page=" + str(page + 1)
+        prev = "/internship?page=" + str(page - 1)
+        next = "/internship?page=" + str(page + 1)
 
-    return render_template('internship.html', params=params, post=post, prev=prev, next=next)
+    return render_template('internship.html', params=params, internship=internship, prev=prev, next=next)
 
 
 @app.route("/post/<string:post_slug>", methods= ['GET'])
@@ -354,6 +382,12 @@ def post_route(post_slug):
         post = Posts.query.filter_by(slug=post_slug).first()
         
         return render_template('post.html', params=params,post=post)
+
+@app.route("/internship/<string:internship_slug>", methods= ['GET'])
+def internship_route(internship_slug):
+        internship = Internship.query.filter_by(slug=internship_slug).first()
+        
+        return render_template('post1.html', params=params,internship=internship)
 
 @app.route("/uploader", methods = ['GET', 'POST'])
 def uploader():
@@ -392,7 +426,7 @@ def contact():
         mail.send_message('New message from ' + name,
                           sender=email,
                           recipients = [params['gmail-user']],
-                          body = message + "\n" + phone
+                          body = email + "\n" + message + "\n" + phone
                           )
     return render_template('contact.html',params=params)
 
